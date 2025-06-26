@@ -445,9 +445,9 @@ match target.ext_my_optfeat() {
 
 If you take a look at the generated assembly (e.g: using godbolt.org),
 you'll find that the compiler is able to inline and devirtualize all the
-`ext_` methods, which in-turn allows the dead-code-eliminator to work it's
+`ext_` methods, which in-turn allows the dead-code-eliminator to work its
 magic, and remove all unused branches from the library code! i.e: If a
-target didn't support `MyFeat`, then the `match` statement above would be
+target supports `MyFeat`, then the `match` statement above would be
 equivalent to calling `self.cool_feature()` directly!
 
 ### Caveats:
